@@ -48,13 +48,13 @@ def you_forgot_something():
     # To see the type of error, you should see "xxxxxxxError:" in the output below
 
     # TODO: What is the type of error for this?
-    # Your Answer: 
+    # Your Answer: Syntax Error
 
     # TODO: What is the difference between = (single equals) and == (double equals)?
     # You may need to use google to find the answer.
-    # Your Answer: 
+    # Your Answer: The single equals sets a variable equal to a value or string while a double equals checks to see if a variable is equal to another value or string.
 
-    if 1 + 1 = 2:
+    if 1 + 1 == 2:
         print("They are equal!")
 
     # TODO: Resolve the error and run the code again to make sure nothing happens
@@ -65,10 +65,10 @@ def it_matters():
     # You'll notice that indents actually matter in Python
 
     # TODO: What is the type of error for this?
-    # Your Answer: 
+    # Your Answer: Indentation Error
 
     for i in range(10):
-    print(i)
+        print(i)
 
     # TODO: Resolve the error and run the code again to make sure nothing happens
 
@@ -77,9 +77,9 @@ def hello_world():
     # Something is misspelled!
 
     # TODO: What is the type of error for this? (What's in the place of xxxxxxx)
-    # Your answer: 
+    # Your answer: Name Error
     
-    prnit("Hello World")
+    print("Hello World")
 
     # TODO resolve the error, and run the code again to make sure nothing happens.
 
@@ -88,9 +88,9 @@ def it_does_not_compute():
     # What happens when you try to divide a string by an integer?
 
     # TODO: What is the type of error for this? (What's in the place of xxxxxxx)
-    # Your answer: 
+    # Your answer: Type Error
 
-    x = "18"    # This is a string
+    x = 18    # This is a string
     y = 3       # This is an integer
 
     z = x / y
@@ -110,10 +110,10 @@ def my_list_is_too_short():
     # What happens if we try to get an index that isn't within 0-3?
 
     # TODO: What is the type of error for this?
-    # Your answer: 
+    # Your answer: Index Error
 
     my_list = ["C", "O", "O", "L"]
-    print(my_list[4])
+    print(my_list[3])
 
     # TODO resolve the error, and run the code again to make sure nothing happens.
 
@@ -123,9 +123,9 @@ def everyone_knows_this_math_rule():
     # Something bad will happen if we break a rule of math...
 
     # TODO: What is the type of error for this?
-    # Your answer: 
+    # Your answer: Zero Division Error
 
-    x = 0
+    x = 5
     y = 10
 
     z = y / x
@@ -139,10 +139,10 @@ def giving_functions_the_wrong_stuff():
     # the int() function is built-in and converts an integer to a string
 
     # TODO: What is the type of error for this?
-    # Your answer: 
+    # Your answer: Value Error
 
     my_int = int("5") # This works fine, because "5" is a number
-    my_int_2 = int("Dan") # What happens if we try to pass a non-number?
+    my_int_2 = int("6") # What happens if we try to pass a non-number?
 
     # TODO resolve the error, and run the code again to make sure nothing happens.
 
@@ -155,10 +155,10 @@ def make_your_own_error():
     # What happens if the function gets -5? or 12? It will likely cause an unexpected error somewhere deeper in the code.
     # However, we can stop the code in an expected way by raising our own error.
 
-    x = 12 # Oops, this isn't between 1 and 10
+    x = 5 # Oops, this isn't between 1 and 10
 
     if x < 1 or x > 10:
-        raise TypeError("The number must be between 1 and 10")
+        raise ValueError("The number must be between 1 and 10")
     
     # TODO: Run the code to see how our raised error occurs
 
