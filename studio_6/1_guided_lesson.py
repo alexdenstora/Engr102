@@ -10,14 +10,18 @@ student_1_major = "Computer Science"
 student_1_expected_graduation_year = "2026"
 
 student_2_id = 18582185
-student_2_name = "Jennie"
+student_2_first_name = "Jennie"
 student_2_last_name = "Kim"
 student_2_major = "Chemistry"
 student_2_expected_graduation_year = "2025"
 
 # TODO: Create a new student student_3 following the same format
 
-
+student_3_id = 396572
+student_3_first_name = "Frank"
+student_3_last_name = "Ocean"
+studnet_3_major = "Music Theory"
+student_3_expected_graduation_year = "2027"
 
 
 
@@ -35,18 +39,39 @@ student_2_expected_graduation_year = "2025"
 # Basic structure of a class
 class Student:
     # TODO: Let's build this class!
-    def __init__(self):
-        pass
+    def __init__(self, id, first_name, last_name, major, graduation_year):
+        self.__id = id
+        self.first_name = first_name
+        self.last_name = last_name
+        self.major = major
+        self.graduation_year = graduation_year
+
+    @property
+    def id(self):
+        return self.__id
+    
+    def get_full_name(self):
+        return self.first_name + " " + self.last_name
+    
+    def get_last_four(self):
+        string_id = str(self.__id)
+        return int(string_id[-4:])
+    
+    def print_degree_title(self):
+        print("Bachelor of " + " " + self.major)
+
+        
 
 
 
 # TODO: Let's recreate our 3 students as objects of our new class!
 
+student_1 = Student(18584831,"Daniel","White","Computer Science","2026")
+student_2 = Student(18582185,"Jennie","Kim","Chemistry","2025")
+student_3 = Student(396572,"Frank","Ocean","Music Theory","2027")
 
-
-
-
-
+print(student_1_id)
+print(student_1.get_full_name())
 
 # OOP Property Abstraction: The idea of making certain data private
 # This prevents other functions/parts of the code from accessing or modifying a value.
@@ -54,7 +79,7 @@ class Student:
 # TODO: Make the id private.
 # Test your code and ensure you cannot access student_1.__id (you should see an error)
     
-
+ 
 
 
 # This is good because it prevents users from modifying the id by accident.
@@ -63,6 +88,7 @@ class Student:
 # TODO: Add an @property getter for id
 # Test to make sure you can get the id with student_1.id
     
+print(student_1.id)
 
 
 # What if we want a way to just get the last four of the id instead of the whole thing? We can build a custom class method to do this.
@@ -79,11 +105,22 @@ class Student:
     
 # TODO: Create a child class called GradStudent which inherits from the Student class, with the additional property of "specialization"
 
+class GradStudent(Student):
+    def __init__(self, id, first_name, last_name, major, graduation_year, specialization):
+        super().__init__(id, first_name, last_name, major, graduation_year)
+        self.specialization = specialization
+
+    def print_degree_title(self):
+        print("Bachelor of " + self.major + " " + "Specialization in " + self.specialization)
+        
+
 
 # create a new student_4 which uses GradStudent instead.
 # this person's major is Computer Science and their Specialization is Artifical Intelligence
     
+student_4 = GradStudent(1338657234, "Bob","Builder", "Computer Science", "2024", "Artificial Intelligence")
 
+print("hai!!!")
 # OOP Property - Polymorphism
 # refers to methods/functions/operators with the same name that can be executed on many objects or classes.
     
