@@ -6,7 +6,38 @@ class Vehicle:
         self.mileage = mileage
 
 # TODO: Create a child class Bus that will inherit all of the variables and methods of the Vehicle class.
+class Bus(Vehicle):
+    def __init__(self, max_speed, mileage, seating_capacity=4):
+        super().__init__(max_speed, mileage)
+        self.seating_capacity = seating_capacity
 
+    def set_seating_capacity(self):
+        self.seating_capacity = school_bus.seating_capacity
+        return self.seating_capacity
+    
+    def print_bus_info(self):
+        print("max speed: " + self.max_speed + " " + "mileage: " + self.mileage + " " + "seating capacity: " + self.seating_capacity)  
+
+school_bus = Bus("80", "45000", "42")
+
+school_bus.print_bus_info()
+
+
+class Van(Vehicle):
+    def __init__(self, max_speed, mileage, candy_box_capacity):
+        super().__init__(max_speed, mileage)
+        self.candy_box_capacity = candy_box_capacity
+
+    def set_candy_box_capacity(self):
+        self.candy_box_capacity = white_van.candy_box_capacity
+        return self.candy_box_capacity
+    
+    def print_van_info(self):
+        print("max speed: " + self.max_speed + " " + "mileage: " + self.mileage + " " + "candy box capacity: " + self.candy_box_capacity)
+
+white_van = Van("80", "50000", "10")
+
+white_van.print_van_info()
 # TODO: Instantiate your Bus class to an object to a variable called school_bus, the max speed 80, and mileage 45000.
 
 # TODO: Add seating_capacity as a parameter in the def __init__(), but give it a default property of 4 seating_capacity=4 and add self.seating_capacity = seating_capacity.
