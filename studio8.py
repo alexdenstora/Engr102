@@ -31,20 +31,20 @@ def main():
         print("----------------------")
         print("Answer to question 2 and 3:")
         get_shortest_and_longest(quotes)
-        print("----------------------")
+        print("--------------------")
         
 
         return
 
 def get_popular_tags(quotes):
     list_of_tags = []
-    top_ten = []
+    #top_ten = []
     
     
     for quote in quotes:
         list_of_tags.extend(quote.tags)
 
-    sorted_list_tags = sorted(list_of_tags)
+    #sorted_list_tags = sorted(list_of_tags)
 
     #print(sorted_list_tags)
 
